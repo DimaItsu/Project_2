@@ -8,18 +8,20 @@ const personalMovieDB = {
     genres: [],
     privat: false
 };
-
-for (let i=1; i<3; i++){
+let i=0;
+do {
     const a = prompt('Один из последних просмотренных фильмов?', ''),
           b = prompt('На сколько оцениет его?', '');
+          i++;
           if (a != null && b!= null && a !='' && b!= '' && a.length <50) {
             personalMovieDB.movies[a] =  b;
             console.log("done"); 
           } else {
               console.log('error');
               i--;
-          }      
+          }    
 }
+while(i<2);  
 
 if (personalMovieDB.count<10) {
     console.log('Просмотренно довольно мало фильмов');
